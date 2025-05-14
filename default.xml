@@ -12,8 +12,10 @@
     <linkfile src="kleaf/bzlmod/bazel.WORKSPACE.bzlmod" dest="WORKSPACE.bzlmod" />
   </project>
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="ddk" />
-  <project path="common" name="kernel/common" revision="android15-6.6-2024-10" upstream="android15-6.6-2024-10" dest-branch="android15-6.6-2024-10" />
   <project path="kernel/configs" name="kernel/configs" revision="main" upstream="main" dest-branch="main" />
+  
+  <!--
+  <project path="common" name="kernel/common" revision="android15-6.6-2024-10" upstream="android15-6.6-2024-10" dest-branch="android15-6.6-2024-10" />
   <project path="kernel/tests" name="kernel/tests" revision="main" upstream="main" dest-branch="main">
     <linkfile src="tools/run_test_only.sh" dest="run_test_only.sh" />
     <linkfile src="tools/launch_cvd.sh" dest="launch_cvd.sh" />
@@ -21,6 +23,8 @@
   </project>
   <project path="common-modules/trusty" name="kernel/common-modules/trusty" />
   <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="5d958cd23d5b31cec3af26438377c4478d4bed30" upstream="android15-6.6" dest-branch="android15-6.6" />
+  -->
+  
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="ddk" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" groups="ddk" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" groups="ddk" />
@@ -55,4 +59,7 @@
   <project path="external/toybox" name="platform/external/toybox" groups="ddk" />
   <project path="external/zlib" name="platform/external/zlib" groups="ddk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="ddk" />
+  
+  <!-- s5e8855 -->
+  <include name="kernel.xml"/>
 </manifest>

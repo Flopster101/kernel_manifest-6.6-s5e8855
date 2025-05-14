@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="s5e8855" fetch="https://github.com/samsung-s5e8855-kernel" sync-c="true"/>
+
+  <!-- s5e8855 kernel -->
+  <project path="common" name="kernel_platform_exynos-kernel" revision="android15-6.6-2024-10_r30" remote="s5e8855" clone-depth="1"/>
+
+  <!-- s5e8855 Device -->
+  <project path="kernel_platform/platform/prebuilts/erd8845" name="kernel_platform_prebult" revision="main" remote="s5e8855" clone-depth="1">
+
+    <!-- prebuilts/platform/common -->
+    <linkfile src="prebuilts/platform/common/BUILD.bazel" dest="prebuilts/platform/common/BUILD.bazel" />
+    <linkfile src="prebuilts/platform/common/fstab.s5e8855" dest="prebuilts/platform/common/fstab.s5e8855" />
+    <linkfile src="prebuilts/platform/common/fstab.s5e8855.ab" dest="prebuilts/platform/common/fstab.s5e8855.ab" />
+
+    <!-- prebuilts/platform/erd8855 -->
+    <linkfile src="prebuilts/platform/erd8855/BUILD.bazel" dest="prebuilts/platform/erd8855/BUILD.bazel" />
+    <linkfile src="prebuilts/platform/erd8855/conf/init.recovery.s5e8855.rc" dest="prebuilts/platform/erd8855/conf/init.recovery.s5e8855.rc" />
+    <linkfile src="prebuilts/platform/erd8855/conf/init.s5e8855.usb.rc" dest="prebuilts/platform/erd8855/conf/init.s5e8855.usb.rc" />
+    <linkfile src="prebuilts/platform/erd8855/firmware/sgpu/mgfx2.0_mid.bin" dest="prebuilts/platform/erd8855/firmware/sgpu/mgfx2.0_mid.bin" />
+
+    <!-- prebuilts/boot-artifacts/arm64/exynos -->
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/BUILD.bazel" dest="prebuilts/boot-artifacts/arm64/exynos/BUILD.bazel" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/file_contexts" dest="prebuilts/boot-artifacts/arm64/exynos/file_contexts" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/system_prebuilt_files.tar.gz" dest="prebuilts/boot-artifacts/arm64/exynos/system_prebuilt_files.tar.gz" />
+
+    <!-- user variant -->
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/user/init_boot.img" dest="prebuilts/boot-artifacts/arm64/exynos/user/init_boot.img" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/user/ramdisk.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/user/ramdisk.cpio.lz4" />
+
+    <!-- eng variant -->
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/eng/init_boot.img" dest="prebuilts/boot-artifacts/arm64/exynos/eng/init_boot.img" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk.cpio.lz4" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk_for_console.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk_for_console.cpio.lz4" />
+
+    <!-- userdebug variant -->
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/userdebug/init_boot.img" dest="prebuilts/boot-artifacts/arm64/exynos/userdebug/init_boot.img" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/userdebug/ramdisk.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/userdebug/ramdisk.cpio.lz4" />
+  </project>
+
+  <!-- Kernel Platform -->
+  <project path="kernel_platform/kernel_device_samsung_A56x" name="kernel_device_samsung_A56x" revision="main" remote="s5e8855" clone-depth="1">
+
+    <!-- devices -->
+    <linkfile src="device" dest="exynos/device" />
+    <linkfile src="device/erd/erd9945/device.bazelrc" dest=".d1.bazelrc" />
+    <linkfile src="device/erd/erd9955/device.bazelrc" dest=".d2.bazelrc" />
+    <linkfile src="device/mx/mx8855/device.bazelrc" dest=".d3.bazelrc" />
+
+    <!-- modules -->
+    <linkfile src="external-modules" dest="exynos/external-modules" />
+
+    <!-- SoC -->
+    <linkfile src="soc-series" dest="exynos/soc-series" />
+    <linkfile src="soc-series/s-android15/device.bazelrc" dest="device.bazelrc" />
+    <linkfile src="soc-series/common/bazel.WORKSPACE" dest="WORKSPACE" />
+    
+    <!-- README -->
+    <linkfile src="README.md" dest="README.md" />
+  </project>
+
+  <!-- Build script -->
+  <project name="kernel_platform_script" path="kernel_platform/script" revision="main" remote="s5e8855">
+    <linkfile dest="build.sh" src="build.sh" />
+  </project>
+</manifest>
