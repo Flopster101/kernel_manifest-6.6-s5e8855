@@ -6,36 +6,9 @@
   <project path="common" name="kernel_platform_common-s5e8855" revision="rebase/initial" remote="flopster" clone-depth="1"/>
 
   <!-- s5e8855 Device -->
-  <project path="kernel_platform/platform/prebuilts/erd8845" name="kernel_platform_prebuilt" revision="main" remote="flopster" clone-depth="1">
-
-    <!-- prebuilts/platform/common -->
-    <linkfile src="prebuilts/platform/common/BUILD.bazel" dest="prebuilts/platform/common/BUILD.bazel" />
-    <linkfile src="prebuilts/platform/common/fstab.s5e8855" dest="prebuilts/platform/common/fstab.s5e8855" />
-    <linkfile src="prebuilts/platform/common/fstab.s5e8855.ab" dest="prebuilts/platform/common/fstab.s5e8855.ab" />
-
-    <!-- prebuilts/platform/erd8855 -->
-    <linkfile src="prebuilts/platform/erd8855/BUILD.bazel" dest="prebuilts/platform/erd8855/BUILD.bazel" />
-    <linkfile src="prebuilts/platform/erd8855/conf/init.recovery.s5e8855.rc" dest="prebuilts/platform/erd8855/conf/init.recovery.s5e8855.rc" />
-    <linkfile src="prebuilts/platform/erd8855/conf/init.s5e8855.usb.rc" dest="prebuilts/platform/erd8855/conf/init.s5e8855.usb.rc" />
-    <linkfile src="prebuilts/platform/erd8855/firmware/sgpu/mgfx2.0_mid.bin" dest="prebuilts/platform/erd8855/firmware/sgpu/mgfx2.0_mid.bin" />
-
-    <!-- prebuilts/boot-artifacts/arm64/exynos -->
-    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/BUILD.bazel" dest="prebuilts/boot-artifacts/arm64/exynos/BUILD.bazel" />
-    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/file_contexts" dest="prebuilts/boot-artifacts/arm64/exynos/file_contexts" />
-    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/system_prebuilt_files.tar.gz" dest="prebuilts/boot-artifacts/arm64/exynos/system_prebuilt_files.tar.gz" />
-
-    <!-- user variant -->
-    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/user/init_boot.img" dest="prebuilts/boot-artifacts/arm64/exynos/user/init_boot.img" />
-    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/user/ramdisk.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/user/ramdisk.cpio.lz4" />
-
-    <!-- eng variant -->
-    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/eng/init_boot.img" dest="prebuilts/boot-artifacts/arm64/exynos/eng/init_boot.img" />
-    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk.cpio.lz4" />
-    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk_for_console.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk_for_console.cpio.lz4" />
-
-    <!-- userdebug variant -->
-    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/userdebug/init_boot.img" dest="prebuilts/boot-artifacts/arm64/exynos/userdebug/init_boot.img" />
-    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/userdebug/ramdisk.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/userdebug/ramdisk.cpio.lz4" />
+  <project path="vendor/samsung/prebuilts" name="kernel_platform_prebuilt" revision="main" remote="flopster" clone-depth="1">
+    <linkfile src="boot-artifacts" dest="prebuilts/boot-artifacts" />
+    <linkfile src="platform" dest="prebuilts/platform" />
   </project>
 
   <!-- Kernel Platform -->
