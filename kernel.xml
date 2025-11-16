@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote name="s5e8855" fetch="https://github.com/samsung-s5e8855-kernel" sync-c="true"/>
+  <remote name="flopster" fetch="https://github.com/flopster101" sync-c="true"/>
 
   <!-- s5e8855 kernel -->
-  <project path="common" name="kernel_platform_exynos-kernel" revision="android15-6.6-2024-10_r30" remote="s5e8855" clone-depth="1"/>
+  <project path="common" name="kernel_platform_common-s5e8855" revision="rebase/initial" remote="flopster" clone-depth="1"/>
 
   <!-- s5e8855 Device -->
-  <project path="kernel_platform/platform/prebuilts/erd8845" name="kernel_platform_prebult" revision="main" remote="s5e8855" clone-depth="1">
+  <project path="kernel_platform/platform/prebuilts/erd8845" name="kernel_platform_prebuilt" revision="main" remote="flopster" clone-depth="1">
 
     <!-- prebuilts/platform/common -->
     <linkfile src="prebuilts/platform/common/BUILD.bazel" dest="prebuilts/platform/common/BUILD.bazel" />
@@ -39,7 +39,7 @@
   </project>
 
   <!-- Kernel Platform -->
-  <project path="kernel_platform/kernel_device_samsung_A56x" name="kernel_device_samsung_A56x" revision="main" remote="s5e8855" clone-depth="1">
+  <project path="kernel_platform/kernel_device_samsung_gts10fewifi" name="kernel_device_samsung_gts10fewifi" revision="main" remote="flopster" clone-depth="1">
 
     <!-- devices -->
     <linkfile src="device" dest="exynos/device" />
@@ -60,7 +60,7 @@
   </project>
 
   <!-- Build script -->
-  <project name="kernel_platform_script" path="kernel_platform/script" revision="main" remote="s5e8855">
+  <project name="kernel_platform_script" path="kernel_platform/script" revision="main" remote="flopster">
     <linkfile dest="build.sh" src="build.sh" />
   </project>
 </manifest>
